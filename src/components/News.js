@@ -14,7 +14,7 @@ function News({ category ,setProgress}) {
   const fetchData = async () => {
       setProgress(15)
     const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page}&apiKey=948a21fa30f54825be61f095b225b9ed`
+      `https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page}&apiKey=`
     );
     setProgress(40)
     setloading(true)
@@ -36,7 +36,7 @@ function News({ category ,setProgress}) {
 
   const fetchMoreData = async () => {
       const response = await fetch(
-          `https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page + 1}&apiKey=948a21fa30f54825be61f095b225b9ed`
+          `https://newsapi.org/v2/top-headlines?country=us&category=${category}&page=${page + 1}&apiKey=`
           );
           setPage(page + 1);
     let json = await response.json();
